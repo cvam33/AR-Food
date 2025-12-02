@@ -1,0 +1,367 @@
+/* RESET / BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f7;
+  color: #222;
+}
+
+/* PAGE BG WRAPPER */
+.page-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 24px 16px;
+}
+
+/* SHELL */
+.app-shell {
+  display: flex;
+  max-width: 1600px;
+  width: 100%;
+  min-height: 85vh;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 320px;
+  background: #fafafa;
+  border-right: 1px solid #ececec;
+  padding: 32px 20px;
+}
+
+.logo-area {
+  margin-bottom: 28px;
+}
+
+.logo-area h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* CATEGORY LIST */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.05rem;
+  text-align: left;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.1s;
+}
+
+.category-item:hover {
+  background: #e9f7ef;
+}
+
+.category-item.active {
+  background: #24b26b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.cat-icon {
+  font-size: 1.3rem;
+}
+
+.cat-label {
+  flex: 1;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 32px 40px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  font-size: 0.8rem;
+  background: #24b26b;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 3px 7px;
+  font-weight: 600;
+}
+
+/* ITEMS LIST */
+.items-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* ITEM CARD */
+.item-card {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.03);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border-color: #e0f2ea;
+}
+
+.item-image {
+  width: 140px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.item-description {
+  font-size: 0.98rem;
+  color: #616161;
+  margin-bottom: 10px;
+  max-width: 700px;
+}
+
+.item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ACTION BUTTONS */
+.item-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* AR BUTTON (outline) */
+.ar-btn {
+  padding: 9px 16px;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #24b26b;
+  background: #ffffff;
+  color: #24b26b;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.18s ease, color 0.18s ease,
+              transform 0.1s, box-shadow 0.18s ease;
+}
+
+.ar-btn:hover {
+  background: #e9f7ef;
+  box-shadow: 0 0 0 1px rgba(36, 178, 107, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Add-to-cart button */
+.add-btn {
+  padding: 9px 20px;
+  font-size: 0.98rem;
+  border-radius: 999px;
+  border: none;
+  background: #24b26b;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.18s ease, transform 0.1s;
+}
+
+.add-btn:hover {
+  background: #1f9b5f;
+  transform: translateY(-1px);
+}
+
+/* SCROLLBAR */
+.items-list::-webkit-scrollbar {
+  width: 6px;
+}
+.items-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.items-list::-webkit-scrollbar-thumb {
+  background: #d3d7dd;
+  border-radius: 999px;
+}
+
+/* AR MODAL */
+.ar-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.ar-modal.open {
+  display: flex;
+}
+
+.ar-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.ar-modal-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 20px 24px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ar-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.ar-viewer {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f7;
+}
+
+.ar-hint {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #616161;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ececec;
+    padding: 16px 16px 12px;
+  }
+
+  .category-list {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .main-content {
+    padding: 24px 16px 24px;
+  }
+
+  .item-card {
+    flex-direction: column;
+  }
+
+  .item-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .ar-modal-content {
+    max-width: 95%;
+  }
+
+  .ar-viewer {
+    height: 320px;
+  }
+}
