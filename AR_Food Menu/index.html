@@ -49,10 +49,24 @@
       <!-- Main content -->
       <main class="main-content">
         <header class="main-header">
-          <h2>Popular Items</h2>
+          <div>
+            <h2>Popular Items</h2>
+            <div class="search-bar" id="searchBar">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for food (name, category, description)..."
+              />
+            </div>
+          </div>
           <div class="header-icons">
-            <button class="icon-btn" aria-label="Search">🔍</button>
-            <button class="icon-btn" aria-label="Profile">👤</button>
+            <button class="icon-btn" id="searchBtn" aria-label="Search">🔍</button>
+
+            <!-- Profile goes to a NEW PAGE -->
+            <a href="profile.html" class="icon-btn" aria-label="Profile" id="profileLink">
+              👤
+            </a>
+
             <button class="icon-btn cart-btn" aria-label="Cart">
               🛒
               <span class="cart-count" id="cartCount">0</span>
@@ -87,6 +101,63 @@
 
       <p class="ar-hint">
         Point your camera at a flat surface to place the item in your space.
+      </p>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+    </div>
+
+    <ul class="cart-items" id="cartItemsList"></ul>
+
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <span>Items</span>
+        <span id="cartTotalItems">0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Total</span>
+        <span id="cartTotalPrice">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="checkout-modal" id="checkoutModal">
+    <div class="checkout-backdrop"></div>
+    <div class="checkout-content">
+      <button class="checkout-close-btn" id="checkoutCloseBtn">&times;</button>
+      <h3>Checkout</h3>
+      <p class="checkout-total">
+        Total amount: <span id="checkoutTotalPrice">$0.00</span>
+      </p>
+
+      <form class="checkout-form">
+        <label>
+          Name
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label>
+          Phone
+          <input type="tel" placeholder="Your phone number" />
+        </label>
+        <label>
+          Payment Method
+          <select>
+            <option>UPI</option>
+            <option>Card</option>
+            <option>Cash on Delivery</option>
+          </select>
+        </label>
+        <button type="button" id="checkoutPayBtn">Pay (Demo)</button>
+      </form>
+      <p class="checkout-note">
+        This is a demo checkout — integrate Razorpay / Stripe / etc. later.
       </p>
     </div>
   </div>
